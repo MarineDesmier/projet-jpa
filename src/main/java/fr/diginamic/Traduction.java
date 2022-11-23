@@ -21,7 +21,7 @@ public class Traduction {
 	@Column(name = "ID_TRADUCTION")
 	private int id;
 	
-	@Column(name = "traduction", nullable = false, length = 150 )
+	@Column(name = "TRADUCTION", nullable = false, length = 150 )
 	private String traduction;
 	
 	@OneToMany(mappedBy = "traductionEpreuve")

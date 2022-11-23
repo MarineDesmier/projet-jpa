@@ -22,16 +22,16 @@ public class Langue {
 	@Column(name = "ID_LANGUE")
 	private int id;
 	
-	@Column(name = "nom", nullable = false, length = 50)
+	@Column(name = "NOM", nullable = false, length = 50)
 	private String nom;
 
-	@Column(name = "code_cio", nullable = false, length = 3)
+	@Column(name = "CODE_CIO", nullable = false, length = 3)
 	private String code_cio;
 	
 	@ManyToMany
 	@JoinTable(name = "traduction_langue",
-			joinColumns = @JoinColumn(name = "ID_LANGUE", referencedColumnName = "ID_LAN"),
-			inverseJoinColumns = @JoinColumn(name = "ID_TRADUCTION", referencedColumnName = "ID_TRA"))
+			joinColumns = @JoinColumn(name = "ID_LANG", referencedColumnName = "ID_LANGUE"),
+			inverseJoinColumns = @JoinColumn(name = "ID_TRAD", referencedColumnName = "ID_TRADUCTION"))
 	private List<Traduction> traductions = new ArrayList<Traduction>();
 
 	public Langue() {}

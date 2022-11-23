@@ -22,7 +22,7 @@ public class Sport {
 	@Column(name = "ID_SPORT")
 	private int id;
 
-	@Column(name = "label", nullable = false, length = 100)
+	@Column(name = "LABEL", nullable = false, length = 100)
 	private String label;
 	
 	@OneToMany(mappedBy = "sport")

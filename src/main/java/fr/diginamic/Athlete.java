@@ -27,16 +27,16 @@ public class Athlete {
 	@Column(name = "ID_ATHLETE")
 	private int id;
 
-	@Column(name = "nom", nullable = false, length = 150)
+	@Column(name = "NOM", nullable = false, length = 150)
 	private String nom;
 	
-	@Column(name = "age", nullable = true)
+	@Column(name = "AGE", nullable = true)
 	private String age;
 	
-	@Column(name = "taille", nullable = true)
+	@Column(name = "TAILLE", nullable = true)
 	private float taille;
 	
-	@Column(name = "poids", nullable = true)
+	@Column(name = "POIDS", nullable = true)
 	private float poids;
 	
 	@Enumerated(EnumType.STRING)
@@ -44,18 +44,18 @@ public class Athlete {
 	
 	@ManyToOne // plusieurs athlètes représente un pays
 	@JoinColumn(name = "ID_PAYS")
-	private Pays pays;
+	private Pays paysAthlete;
 	
 	@ManyToMany
 	@JoinTable(name = "athlete_epreuve",
-			joinColumns = @JoinColumn(name ="ID_ATHLETE", referencedColumnName = "ID_ATH"),
-			inverseJoinColumns = @JoinColumn(name = "ID_EPREUVE", referencedColumnName = "ID_EPR"))
+			joinColumns = @JoinColumn(name ="ID_ATH", referencedColumnName = "ID_ATHLETE"),
+			inverseJoinColumns = @JoinColumn(name = "ID_EPR", referencedColumnName = "ID_EPREUVE"))
 	private List<Epreuve> epreuves = new ArrayList<Epreuve>();
 	
 	@ManyToMany
 	@JoinTable(name = "athlete_medaille",
-			joinColumns = @JoinColumn(name ="ID_ATHLETE", referencedColumnName = "ID_ATH"),
-			inverseJoinColumns = @JoinColumn(name = "ID_MEDAILLE", referencedColumnName = "ID_MED"))
+			joinColumns = @JoinColumn(name ="ID_ATH", referencedColumnName = "ID_ATHLETE"),
+			inverseJoinColumns = @JoinColumn(name = "ID_MED", referencedColumnName = "ID_MEDAILLE"))
 	private List<Medaille> medailles = new ArrayList<Medaille>();
 	
 	@ManyToMany(mappedBy = "athletes")
@@ -66,7 +66,7 @@ public class Athlete {
 	@Override
 	public String toString() {
 		return "Athlete [id=" + id + ", nom=" + nom + ", age=" + age + ", taille=" + taille + ", poids=" + poids
-				+ ", sexe=" + sexe + ", pays=" + pays + ", epreuves=" + epreuves + ", medailles=" + medailles
+				+ ", sexe=" + sexe + ", pays=" + paysAthlete + ", epreuves=" + epreuves + ", medailles=" + medailles
 				+ ", jeux=" + jeux + "]";
 	}
 
@@ -171,7 +171,7 @@ public class Athlete {
 	 * @return the pays
 	 */
 	public Pays getPays() {
-		return pays;
+		return paysAthlete;
 	}
 
 	/**
@@ -179,7 +179,7 @@ public class Athlete {
 	 * @param pays the pays to set
 	 */
 	public void setPays(Pays pays) {
-		this.pays = pays;
+		this.paysAthlete = pays;
 	}
 
 	/**

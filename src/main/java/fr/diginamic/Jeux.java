@@ -27,19 +27,19 @@ public class Jeux {
 	@Column(name = "ID_JEUX")
 	private int id;
 
-	@Column(name = "annee", nullable = false)
+	@Column(name = "ANNEE", nullable = false)
 	private String annee;
 	
 	@Enumerated(EnumType.STRING)
 	private Saison saison;
 
-	@Column(name = "ville", nullable = false, length = 100)
+	@Column(name = "VILLE", nullable = false, length = 100)
 	private String ville;
 	
 	@ManyToMany
 	@JoinTable(name = "jeux_athlete",
 	joinColumns = @JoinColumn(name ="ID_JEUX", referencedColumnName = "ID_JEUX"),
-	inverseJoinColumns = @JoinColumn(name = "ID_ATHLETE", referencedColumnName = "ID_ATH"))
+	inverseJoinColumns = @JoinColumn(name = "ID_ATH", referencedColumnName = "ID_ATHLETE"))
 	private List<Athlete> athletes = new ArrayList<Athlete>();
 	
 	@OneToMany(mappedBy = "jeu")

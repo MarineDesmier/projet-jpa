@@ -21,13 +21,13 @@ public class Medaille {
 	@Column(name = "ID_MEDAILLE")
 	private int id;
 	
-	@Column(name = "or", nullable = true)
+	@Column(name = "OR", nullable = true)
 	private Boolean or;
 	
-	@Column(name = "argent", nullable = true)
+	@Column(name = "ARGENT", nullable = true)
 	private Boolean argent;
 	
-	@Column(name = "bronze", nullable = true)
+	@Column(name = "BRONZE", nullable = true)
 	private Boolean bronze;
 
 	@ManyToMany(mappedBy = "medailles")

@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -21,27 +22,27 @@ public class Pays {
 	@Column(name = "ID_PAYS")
 	private int id;
 
-	@Column(name = "nom", nullable = false, length = 75)
+	@Column(name = "NOM", nullable = false, length = 75)
 	private String nom;
 	
-	@Column(name = "code_cio", nullable = false, length = 3)
+	@Column(name = "CODE_CIO", nullable = false, length = 3)
 	private String code_cio;
 	
-	@Column(name = "code_iso", nullable = true, length = 3)
+	@Column(name = "CODE_ISO", nullable = true, length = 3)
 	private String code_iso;
 	
-	@Column(name = "obsolete", nullable = false, length = 3) 
+	@Column(name = "OBSOLETE", nullable = false, length = 3) 
 	private String obsolete;
 	
 	// un pays est représenté par plusieurs athlètes
-	@OneToMany(mappedBy = "pays") 
+	@OneToMany(mappedBy = "paysAthlete") 
 	private List<Athlete> athletes = new ArrayList<Athlete>();
 
 	// un pays est représenté par plusieurs équipes
 	@OneToMany(mappedBy = "pays")
 	private List<Equipe> equipes = new ArrayList<Equipe>();
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "ID_TRADUCTION")
 	private Traduction traductionPays;
 	

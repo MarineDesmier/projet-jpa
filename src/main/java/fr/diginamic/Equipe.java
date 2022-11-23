@@ -18,10 +18,10 @@ public class Equipe {
 	@Column(name = "ID_EQUIPE")
 	private int id;
 
-	@Column(name = "nom", nullable = false, length = 75)
+	@Column(name = "NOM", nullable = false, length = 75)
 	private String nom;
 	
-	@Column(name = "code_iso", nullable = false, length = 3)
+	@Column(name = "CODE_ISO", nullable = false, length = 3)
 	private String code_iso;
 	
 	// plusieurs equipes réprésente un pays

@@ -27,7 +27,7 @@ public class Epreuve {
 	@Column(name = "ID_EPREUVE")
 	private int id;
 
-	@Column(name = "label", nullable = false, length = 150)
+	@Column(name = "LABEL", nullable = false, length = 150)
 	private String label;
 	
 	@Enumerated(EnumType.STRING)
