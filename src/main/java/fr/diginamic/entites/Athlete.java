@@ -1,4 +1,4 @@
-package fr.diginamic;
+package fr.diginamic.entites;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +62,34 @@ public class Athlete {
 	private List<Jeux> jeux;
 
 	public Athlete() {}
+	
+	/** Constructeur
+	 * @param id
+	 * @param nom
+	 * @param age
+	 * @param taille
+	 * @param poids
+	 * @param sexe
+	 * @param paysAthlete
+	 * @param epreuves
+	 * @param medailles
+	 * @param jeux
+	 * @author :Marine Desmier
+	 */
+	public Athlete(int id, String nom, String age, float taille, float poids, Sexe sexe, Pays paysAthlete,
+			List<Epreuve> epreuves, List<Medaille> medailles, List<Jeux> jeux) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.age = age;
+		this.taille = taille;
+		this.poids = poids;
+		this.sexe = sexe;
+		this.paysAthlete = paysAthlete;
+		this.epreuves = epreuves;
+		this.medailles = medailles;
+		this.jeux = jeux;
+	}
 
 	@Override
 	public String toString() {

@@ -1,4 +1,4 @@
-package fr.diginamic;
+package fr.diginamic.entites;
 
 import java.util.ArrayList;
 import java.util.List;
