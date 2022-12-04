@@ -30,6 +30,7 @@ public class Epreuve {
 	@Column(name = "LABEL", nullable = false, length = 150)
 	private String label;
 	
+	@Column(name = "DISTINCTION")
 	@Enumerated(EnumType.STRING)
 	private Distinction distinction;
 	
@@ -58,6 +59,30 @@ public class Epreuve {
 		return "Epreuve [id=" + id + ", label=" + label + ", distinction=" + distinction + ", jeu=" + jeu
 				+ ", medailles=" + medailles + ", sport=" + sport + ", athletes=" + athletes + ", traductionEpreuve="
 				+ traductionEpreuve + "]";
+	}
+
+	/** Constructeur
+	 * @param id
+	 * @param label
+	 * @param distinction
+	 * @param jeu
+	 * @param medailles
+	 * @param sport
+	 * @param athletes
+	 * @param traductionEpreuve
+	 * @author :Marine Desmier
+	 */
+	public Epreuve(int id, String label, Distinction distinction, Jeux jeu, List<Medaille> medailles, Sport sport,
+			List<Athlete> athletes, Traduction traductionEpreuve) {
+		super();
+		this.id = id;
+		this.label = label;
+		this.distinction = distinction;
+		this.jeu = jeu;
+		this.medailles = medailles;
+		this.sport = sport;
+		this.athletes = athletes;
+		this.traductionEpreuve = traductionEpreuve;
 	}
 
 	/**

@@ -42,6 +42,31 @@ public class Traduction {
 				+ ", pays=" + pays + ", langues=" + langues + "]";
 	}
 
+	/** Constructeur
+	 * @param id
+	 * @param traduction
+	 * @param epreuves
+	 * @param sport
+	 * @param pays
+	 * @param langues
+	 * @author :Marine Desmier
+	 */
+	public Traduction(int id, String traduction, List<Epreuve> epreuves, List<Sport> sport, List<Pays> pays,
+			List<Langue> langues) {
+		super();
+		this.id = id;
+		this.traduction = traduction;
+		this.epreuves = epreuves;
+		this.sport = sport;
+		this.pays = pays;
+		this.langues = langues;
+	}
+
+
+	public Traduction() {
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * Getter pour l'attribut id 
 	 * @return the id

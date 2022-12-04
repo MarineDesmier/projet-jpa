@@ -31,7 +31,7 @@ public class Athlete {
 	private String nom;
 	
 	@Column(name = "AGE", nullable = true)
-	private String age;
+	private int age;
 	
 	@Column(name = "TAILLE", nullable = true)
 	private float taille;
@@ -39,6 +39,7 @@ public class Athlete {
 	@Column(name = "POIDS", nullable = true)
 	private float poids;
 	
+	@Column(name = "SEXE")
 	@Enumerated(EnumType.STRING)
 	private Sexe sexe;
 	
@@ -76,7 +77,7 @@ public class Athlete {
 	 * @param jeux
 	 * @author :Marine Desmier
 	 */
-	public Athlete(int id, String nom, String age, float taille, float poids, Sexe sexe, Pays paysAthlete,
+	public Athlete(int id, String nom, int age, float taille, float poids, Sexe sexe, Pays paysAthlete,
 			List<Epreuve> epreuves, List<Medaille> medailles, List<Jeux> jeux) {
 		super();
 		this.id = id;
@@ -89,6 +90,10 @@ public class Athlete {
 		this.epreuves = epreuves;
 		this.medailles = medailles;
 		this.jeux = jeux;
+	}
+
+	public Athlete(int id2, String nom2, Sexe sexe2, int age2, float taille2, float poids2) {
+		// test
 	}
 
 	@Override
@@ -134,7 +139,7 @@ public class Athlete {
 	 * Getter pour l'attribut age 
 	 * @return the age
 	 */
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}
 
@@ -142,7 +147,7 @@ public class Athlete {
 	 * Setter pour l'attribut age
 	 * @param age the age to set
 	 */
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 

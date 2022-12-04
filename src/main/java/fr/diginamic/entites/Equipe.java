@@ -36,6 +36,21 @@ public class Equipe {
 		return "Equipe [id=" + id + ", nom=" + nom + ", code_iso=" + code_iso + ", pays=" + pays + "]";
 	}
 
+	/** Constructeur
+	 * @param id
+	 * @param nom
+	 * @param code_iso
+	 * @param pays
+	 * @author :Marine Desmier
+	 */
+	public Equipe(int id, String nom, String code_iso, Pays pays) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.code_iso = code_iso;
+		this.pays = pays;
+	}
+
 	/**
 	 * Getter pour l'attribut id 
 	 * @return the id

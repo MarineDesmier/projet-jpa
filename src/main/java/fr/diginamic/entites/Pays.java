@@ -55,6 +55,30 @@ public class Pays {
 				+ "]";
 	}
 
+	/** Constructeur
+	 * @param id
+	 * @param nom
+	 * @param code_cio
+	 * @param code_iso
+	 * @param obsolete
+	 * @param athletes
+	 * @param equipes
+	 * @param traductionPays
+	 * @author :Marine Desmier
+	 */
+	public Pays(int id, String nom, String code_cio, String code_iso, String obsolete, List<Athlete> athletes,
+			List<Equipe> equipes, Traduction traductionPays) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.code_cio = code_cio;
+		this.code_iso = code_iso;
+		this.obsolete = obsolete;
+		this.athletes = athletes;
+		this.equipes = equipes;
+		this.traductionPays = traductionPays;
+	}
+
 	/**
 	 * Getter pour l'attribut id 
 	 * @return the id

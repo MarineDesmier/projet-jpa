@@ -30,6 +30,7 @@ public class Jeux {
 	@Column(name = "ANNEE", nullable = false)
 	private String annee;
 	
+	@Column(name = "SAISON")
 	@Enumerated(EnumType.STRING)
 	private Saison saison;
 
@@ -51,6 +52,25 @@ public class Jeux {
 	public String toString() {
 		return "Jeux [id=" + id + ", annee=" + annee + ", saison=" + saison + ", ville=" + ville + ", athletes="
 				+ athletes + ", epreuves=" + epreuves + "]";
+	}
+
+	/** Constructeur
+	 * @param id
+	 * @param annee
+	 * @param saison
+	 * @param ville
+	 * @param athletes
+	 * @param epreuves
+	 * @author :Marine Desmier
+	 */
+	public Jeux(int id, String annee, Saison saison, String ville, List<Athlete> athletes, List<Epreuve> epreuves) {
+		super();
+		this.id = id;
+		this.annee = annee;
+		this.saison = saison;
+		this.ville = ville;
+		this.athletes = athletes;
+		this.epreuves = epreuves;
 	}
 
 	/**

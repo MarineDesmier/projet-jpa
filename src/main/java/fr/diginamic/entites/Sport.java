@@ -40,6 +40,21 @@ public class Sport {
 				+ traductionSport + "]";
 	}
 
+	/** Constructeur
+	 * @param id
+	 * @param label
+	 * @param epreuves
+	 * @param traductionSport
+	 * @author :Marine Desmier
+	 */
+	public Sport(int id, String label, List<Epreuve> epreuves, Traduction traductionSport) {
+		super();
+		this.id = id;
+		this.label = label;
+		this.epreuves = epreuves;
+		this.traductionSport = traductionSport;
+	}
+
 	/**
 	 * Getter pour l'attribut id 
 	 * @return the id

@@ -41,6 +41,21 @@ public class Langue {
 		return "Langue [id=" + id + ", nom=" + nom + ", code_cio=" + code_cio + ", traductions=" + traductions + "]";
 	}
 
+	/** Constructeur
+	 * @param id
+	 * @param nom
+	 * @param code_cio
+	 * @param traductions
+	 * @author :Marine Desmier
+	 */
+	public Langue(int id, String nom, String code_cio, List<Traduction> traductions) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.code_cio = code_cio;
+		this.traductions = traductions;
+	}
+
 	/**
 	 * Getter pour l'attribut id 
 	 * @return the id

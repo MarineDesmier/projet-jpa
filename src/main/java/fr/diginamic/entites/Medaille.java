@@ -45,6 +45,25 @@ public class Medaille {
 				+ athletes + ", epreuve=" + epreuve + "]";
 	}
 
+	/** Constructeur
+	 * @param id
+	 * @param or
+	 * @param argent
+	 * @param bronze
+	 * @param athletes
+	 * @param epreuve
+	 * @author :Marine Desmier
+	 */
+	public Medaille(int id, Boolean or, Boolean argent, Boolean bronze, List<Athlete> athletes, Epreuve epreuve) {
+		super();
+		this.id = id;
+		this.or = or;
+		this.argent = argent;
+		this.bronze = bronze;
+		this.athletes = athletes;
+		this.epreuve = epreuve;
+	}
+
 	/**
 	 * Getter pour l'attribut id 
 	 * @return the id
